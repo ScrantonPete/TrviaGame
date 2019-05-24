@@ -1,4 +1,4 @@
-var audio = new Audio("assets/images/bark.mp3");
+var audio = new Audio("assets/images/dog2.mp3");
 $(".btn-primary").click(() => audio.play());
 
 var audio = new Audio("assets/images/dogbark.mp3");
