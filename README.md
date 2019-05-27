@@ -10,4 +10,5 @@ This was the 5th homework assignment for the Boot Camp LPS. You only have 10 sec
 - Javascript and jQuery
 
 #Play my game by clicking on this link:
+
 https://scrantonpete.github.io/TrviaGame/
