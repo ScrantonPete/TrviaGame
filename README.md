@@ -1,6 +1,4 @@
-# TrviaGame
-
-# Dog Trivia
+# Dog Trivia Game
 
 This was the 5th homework assignment for the Boot Camp LPS. You only have 10 seconds to answer each question.
 
