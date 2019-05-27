@@ -1,5 +1,9 @@
+// Added Bark sound to Start Button Click
+
 var audio = new Audio("assets/images/dog.mp3");
 $(".btn-primary").click(() => audio.play());
+
+// Question list array with answers defined
 
 var triviaQuestions = [
   {
@@ -56,7 +60,7 @@ var triviaQuestions = [
     answer: 0
   }
 ];
-
+// picture array
 var pictureArray = [
   "question1",
   "question2",
@@ -67,6 +71,8 @@ var pictureArray = [
   "question7",
   "question8"
 ];
+
+// Global Variables
 var currentQuestion;
 var correctAnswer;
 var incorrectAnswer;
@@ -82,16 +88,20 @@ var messages = {
   finished: "Here is how much you know about dogs!"
 };
 
+//Start Button click
+
 $("#startBtn").on("click", function() {
   $(this).hide();
   newGame();
 });
+// Re-start button click
 
 $("#startOverBtn").on("click", function() {
   $(this).hide();
   newGame();
 });
 
+// New Game function, setting placeholder divs empty and new game variables
 function newGame() {
   $("#finalMessage").empty();
   $("#correctAnswers").empty();
@@ -104,13 +114,14 @@ function newGame() {
   newQuestion();
 }
 
+// New question page function, removes old pictures/questions/answers
 function newQuestion() {
   $("#message").empty();
   $("#correctedAnswer").empty();
   $("#picture").empty();
   answered = true;
 
-  //sets up new questions & answerList
+  //Displays new questions and answers
   $("#currentQuestion").html(
     "Dog Breed #" + (currentQuestion + 1) + "/" + triviaQuestions.length
   );
@@ -125,14 +136,15 @@ function newQuestion() {
     $(".answerList").append(choices);
   }
   countdown();
-  //clicking an answer will pause the time and setup answerPage
+
+  //Once user clicks on an naswer, this will show the answer page and pause the timer
   $(".thisChoice").on("click", function() {
     userSelect = $(this).data("index");
     clearInterval(time);
     answerPage();
   });
 }
-
+// setup the timer of 10 seconds
 function countdown() {
   seconds = 10;
   $("#timeLeftCounter").html("<h3>Time Remaining: " + seconds + "</h3>");
@@ -153,7 +165,8 @@ function showCountdown() {
 
 function answerPage() {
   $("#currentQuestion").empty();
-  $(".thisChoice").empty(); //Clears question page
+  $(".thisChoice").empty();
+  //Clears question page
   $(".question").empty();
 
   var rightAnswerText =
@@ -166,7 +179,7 @@ function answerPage() {
       pictureArray[currentQuestion] +
       '.jpg" width = "400px">'
   );
-  //checks to see correct, incorrect, or unanswered
+  //checks to see if answer was correct, incorrect, or unanswered
   if (userSelect == rightAnswerIndex && answered == true) {
     correctAnswer++;
     $("#message").html(messages.correct);
@@ -188,7 +201,7 @@ function answerPage() {
     setTimeout(newQuestion, 5000);
   }
 }
-
+// Updates the scoreboard counters
 function scoreboard() {
   $("#timeLeftCounter").empty();
   $("#message").empty();
