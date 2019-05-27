@@ -23,105 +23,34 @@
       <div class="container">
         <h1 class="display-4">Dog Trivia!</h1>
         <p class="lead">
-          How much do you know about DOGS? See if you can answer 8 questions
+          How much do you know about DOGS? See if you can answer these 8 trivia
           correctly!
         </p>
       </div>
     </div>
+
     <!-- Start Game Button -->
-    <div class="row col-md-12">
-      <button type="button" class="btn btn-primary btn-lg">
-        <span class="fa fa-sound"></span>BARK (Start) Button
-      </button>
-    </div>
-    <!-- Main Container, includes (row 1) Time left counter, Correct Answer Counter, Incorrect Answer Counter
-(row 2) Question Text , (row 3) Submit Answer button, (row 4)choice radio buttons-->
     <div class="container">
-      <div class="main">
-        <div class="row col-md-6">
-          <div class="card" style="width: 18rem;">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item timeLeftCounter">
-                Time left Counter
-              </li>
-              
-              <li class="list-group-item correctAnswerCount">
-                Correct Answer Count
-              </li>
-              <li class="list-group-item incorrectAnswerCount">
-                Incorrect Answer Count
-              </li>
-            </ul>
-          </div>
-      </div>
-      <br />
-      <div class="row col-lg-12 questionText">
-        <h2>Question Text</h2>
-      </div>
-      <br />
-      <button type="button" class="btn btn-danger submitButton">
-        Submit Answer Button
+      <button class="btn btn-primary" id="startBtn">
+        BARK (start) Buttom!
       </button>
-      <br /><br />
-
-      <fieldset class="form-group">
-        <div class="row">
-          <legend class="col-form-label col-sm-2 pt-0">Choices</legend>
-          <div class="col-sm-10">
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="gridRadios"
-                id="gridRadios1"
-                value="option1"
-                checked
-              />
-              <label class="form-check-label" for="gridRadios1">
-                Choice 1
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="gridRadios"
-                id="gridRadios2"
-                value="option2"
-              />
-              <label class="form-check-label" for="gridRadios2">
-                Choice 2
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="gridRadios"
-                id="gridRadios3"
-                value="option3"
-              />
-              <label class="form-check-label" for="gridRadios3">
-                Choice 3
-              </label>
-            </div>
-            <div class="form-check">
-              <input
-                class="form-check-input"
-                type="radio"
-                name="gridRadios"
-                id="gridRadios4"
-                value="option4"
-              />
-              <label class="form-check-label" for="gridRadios4">
-                Choice 4
-              </label>
-            </div>
-          </div>
-        </div>
-      </fieldset>
+      <!-- Question page -->
+      <div id="timeLeftCounter"></div>
+      <div id="currentQuestion"></div>
+      <div class="question"></div>
+      <div class="answerList"></div>
+      <!-- Answer Page -->
+      <div id="message"></div>
+      <div id="correctedAnswer"></div>
+      <div id="picture"></div>
+      <!-- Scoreboard -->
+      <div id="finalMessage"></div>
+      <div id="correctAnswers"></div>
+      <div id="incorrectAnswers"></div>
+      <div id="unanswered"></div>
+      <div id="startOverBtn"></div>
     </div>
-
-    <script src="assets\javascript\app.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
   </body>
 </html>
