@@ -146,7 +146,7 @@ function newQuestion() {
 }
 // setup the timer of 10 seconds
 function countdown() {
-  seconds = 10;
+  seconds = 15;
   $("#timeLeftCounter").html("<h3>Time Remaining: " + seconds + "</h3>");
   answered = true;
   //sets timer to go down
